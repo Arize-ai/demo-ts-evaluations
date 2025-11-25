@@ -1,6 +1,6 @@
 # TypeScript Experiments and Evals with Arize Phoenix
 
-This is a demo application that demonstrates how to run experiments and evaluations in TypeScript with Arize Phoenix. The application uses **Phoenix Cloud** to manage datasets, run experiments, and evaluate LLM outputs.
+This is a demo application that demonstrates how to run experiments and evaluations in TypeScript with Arize Phoenix. The application uses **[Phoenix Cloud](https://app.phoenix.arize.com/)** to manage datasets, run experiments, and evaluate LLM outputs.
 
 ## Overview
 
@@ -15,13 +15,6 @@ To run this demo, you'll need to install the following packages:
 ```bash
 npm install dotenv openai @arizeai/openinference-instrumentation-openai @ai-sdk/openai @arizeai/phoenix-client @arizeai/phoenix-evals
 ```
-
-Or with yarn:
-
-```bash
-yarn add dotenv openai @arizeai/openinference-instrumentation-openai @ai-sdk/openai @arizeai/phoenix-client @arizeai/phoenix-evals
-```
-
 ## Setup
 
 1. Install the required packages (see above)
