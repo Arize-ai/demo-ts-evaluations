@@ -3,7 +3,7 @@ import "./app";
 import { spaceKnowledgeApplication } from "./app";
 import { openai } from "@ai-sdk/openai";
 import { createDataset } from "@arizeai/phoenix-client/datasets";
-import { asEvaluator, runExperiment } from "@arizeai/phoenix-client/experiments";
+import { asExperimentEvaluator, runExperiment } from "@arizeai/phoenix-client/experiments";
 import { createDocumentRelevancyEvaluator } from "@arizeai/phoenix-evals/llm/createDocumentRelevancyEvaluator";
 
 const DATASET = [
@@ -32,7 +32,7 @@ async function main() {
   }
 
   const dataset = await createDataset({
-    name: "document-relevancy-eval47",
+    name: "document-relevancy-eval",
     description: "Queries that are answered by extracting context from the space knowledge base",
     examples: DATASET.map(question => ({
       input: {
@@ -46,7 +46,7 @@ async function main() {
     model: openai("gpt-5"),
   });
 
-  const documentRelevancyCheck = asEvaluator({
+  const documentRelevancyCheck = asExperimentEvaluator({
     name: "document-relevancy",
     kind: "LLM",
     evaluate: async ({ input, output }) => {
